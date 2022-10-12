@@ -1,0 +1,85 @@
+// copia del main js 
+
+var cad = `
+	<div class="swiper-container mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+	<div class="swiper-wrapper" id="swiper-wrapper-e663671e776a9540" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+	`;
+
+for (let i = 0; i < data.length; i++) {
+	cad += `
+	<div class="swiper-slide" role="group" aria-label="${data[i].id}/31" id="tarjeta-creo" style="background-color: rgba(0, 0, 0, 0);">
+		<div class="card" style="overflow: visible;">
+			<div class="card-image" id="fotitos">
+		
+				<img class="activator" src="${data[i].img}">
+				
+				<div class="centrado"></div>
+				
+			</div>
+			<div class="card-content" id="contenido-tarjeta">
+				<span class="card-title activator" id="span-nombre-card"> <p id="nombre-card">${data[i].nombre}</p>
+</span>
+</div>
+<ul style="list-style: none;">
+      				<li>Raza: ${data[i].raza}</li>
+      				<li>Genero: ${data[i].genero}</li>
+      				<li>Tamaño: ${data[i].tamaño}</li>
+      				<li>Vacunas: ${data[i].vacunas}</li>
+      				<li>Castrado: ${data[i].castrado}</li>
+      				<li>Pelaje: ${data[i].pelaje}</li>
+      				<li>Tratamiento: ${data[i].tratamiento}</li>  
+    			</ul>
+			
+  		</div>
+	</div>
+		  `;
+}
+
+cad += `
+    </div>
+	<div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+        aria-controls="swiper-wrapper-e663671e776a9540" aria-disabled="false" id="boton-next"></div>
+    <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide"
+        aria-controls="swiper-wrapper-e663671e776a9540" aria-disabled="true" id="boton-prev"></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+	</div>
+`;
+document.getElementById("data-aca").innerHTML = cad;
+
+
+
+var swiper = new Swiper('.swiper-container', {
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+	slidesPerView: 1,
+	spaceBetween: 10,
+	// init: false,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+
+
+	breakpoints: {
+		620: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		},
+		680: {
+			slidesPerView: 2,
+			spaceBetween: 40,
+		},
+		920: {
+			slidesPerView: 3,
+			spaceBetween: 40,
+		},
+		1240: {
+			slidesPerView: 4,
+			spaceBetween: 50,
+		},
+	}
+});
+
+
